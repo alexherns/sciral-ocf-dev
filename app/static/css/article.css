@@ -1,0 +1,39 @@
+@font-face {
+    font-family: georgia_bold;
+    src: url('/static/font/Georgia Bold.ttf');
+}
+
+@font-face {
+    font-family: georgia;
+    src: url('/static/font/Georgia.ttf');
+}
+
+@font-face {
+    font-family: georgia_ital;
+    src: url('/static/font/Georgia Italic.ttf');
+}
+
+#score-box {
+    display: block;
+    margin-bottom: 10px;
+    
+    height: 60px;
+    width: 65px;
+    border-radius: 10px;
+    line-height: 55px;
+    
+
+    /*-moz-border-radius: 30px;
+    border-radius: 30px;*/
+
+    background-color: #66C2A5;
+    color: #1A4235;
+    text-align: center;
+    font-size: 2em;
+    font-family: georgia;
+}
+
+#article-title {
+	padding-top: 0px;
+	margin-top: 0px;
+	}

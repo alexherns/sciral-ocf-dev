@@ -1,0 +1,25 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Alegreya Sans', sans-serif;
+	background-color: white;
+}
+
+.jumbotron {
+	background-image: url('/static/img/dino-sketch.jpg');
+	background-size: auto 85%;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	height: 100% !important;
+	padding-bottom: 100px;
+	margin-bottom: 0px;
+	display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.jumbotron h1 {
+	font-size: 200px !important;
+	color: #4B4B4B;
+}
