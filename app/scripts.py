@@ -6,7 +6,7 @@ def fetch_articles(data):
     articles= fetch_from_pubmed(articles)
 
 def query_local_database(query):
-    return models.Article.query.whoosh_search(query).all() 
+    return sorted(models.Article.query.whoosh_search(query).order_by(models.Article.score.desc()).all(), key=lambda x: x.score)[::-1]
 
 def load_altmetric_data(data):
     articles= []
