@@ -1,5 +1,10 @@
+log/*
+log/
 app.db
 app/*swp
 flask/*
 tmp/*
 search.db/*
+secrets.py
+*pyc
+*swp

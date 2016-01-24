@@ -4,7 +4,7 @@ from config import ALTMETRIC_KEY
 import urllib2, json
 from app.scripts import fetch_articles
 
-max_pages= 5
+max_pages= 100
 
 old_defaults= models.Article.query.filter(models.Article.default_set == False).all()
 for a in old_defaults:
