@@ -8,3 +8,4 @@ search.db/*
 secrets.py
 *pyc
 *swp
+my_crontab.txt

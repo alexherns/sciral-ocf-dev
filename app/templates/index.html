@@ -15,7 +15,7 @@
 			<div class="container text-center">
 				<h1>Sciral</h1>
 				{% if form %}
-				<form action= "" method="post" name="search_box" class="form-inline" role="form">
+				<form action= "" method="post" name="search_box" class="form-inline" role="form" value="Name" onfocus="if (this.value=='Name') this.value='';">
 					{{ form.hidden_tag() }}
 					<div class="form-group">
 						{{ form.query_term(class_="form-control") }}
@@ -23,6 +23,7 @@
 					  </div>					  
 				</form>
 				{% endif %}
+				<h3>What are you interested in learning about today? Try "zika virus" or "caffeine"</h3>
 			</div>
 		</div>
 	</body>

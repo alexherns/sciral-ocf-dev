@@ -19,6 +19,8 @@ def load_altmetric_data(data):
             title= (result['title'].encode('ascii', errors='ignore'))
         else:
             continue
+        if 'doi' not in result or 'abstract' not in result:
+            continue
         doi= (result['doi'] if 'doi' in result else '')
         journal= (result['journal'] if 'journal' in result else '')
         score= (int(result['score'])+1 if 'score' in result else 0)
