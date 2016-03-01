@@ -3,28 +3,30 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import os
 from config import basedir
 
-app= Flask(__name__)
+app = Flask(__name__)
 app.config.from_object('config')
-db= SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 if not app.debug and os.environ.get('HEROKU') is None:
     import logging
     from logging.handlers import RotatingFileHandler
-    file_handler= RotatingFileHandler(os.path.join(basedir, 'tmp/microblog.log'), 'a', 1*1024*1024, 10)
+    file_handler = RotatingFileHandler(os.path.join(
+        basedir, 'tmp/microblog.log'), 'a', 1 * 1024 * 1024, 10)
     file_handler.setLevel(logging.INFO)
-    file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    file_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
     app.logger.addHandler(file_handler)
     app.logger.setLevel(logging.INFO)
     app.logger.info('sciral-dev startup')
 
 if os.environ.get('HEROKU') is not None:
     import logging
-    stream_handler= logging.StreamHandler()
+    stream_handler = logging.StreamHandler()
     app.logger.addHandler(stream_handler)
     app.logger.setLevel(logging.INFO)
     app.logger.info('sciral-dev startup')
 
-import jinja2_extensions 
+import jinja2_extensions
 
 for name, function in vars(jinja2_extensions)['user_functions'].items():
     exec "app.jinja_env.globals.update({0}=function)".format(name)
@@ -32,4 +34,4 @@ for name, function in vars(jinja2_extensions)['user_functions'].items():
 from app import views, models
 
 if __name__ == '__main__':
-	app.run()
+    app.run()
